@@ -27,7 +27,8 @@ head = {'Authorization': 'Bearer ' + openai.api_key}
 data = q_payload
 
 url = 'https://api.openai.com/v1/answers'
-response = requests.post(url, json=data, headers=head)
+
 
 if st.button('Answer me! 🧑‍🚀'):
-	st.write(response.json()['answers'][0].split('\n', 1)[0])
+   response = requests.post(url, json=data, headers=head)
+   st.write(response.json()['answers'][0].split('\n', 1)[0])
